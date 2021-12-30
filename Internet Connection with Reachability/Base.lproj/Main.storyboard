@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Internet_Connection_with_Reachability" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Y-jb-FTl">
+                                <rect key="frame" x="142" y="425.5" width="130" height="55.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="ACME">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="r9Y-jb-FTl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VNw-I3-fn3"/>
+                            <constraint firstItem="r9Y-jb-FTl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yAt-V8-uqW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="KqR-3P-Tza" kind="showDetail" identifier="NetworkUnavailable" id="Yvw-sb-wcO"/>
+                        <segue destination="4vk-Ie-egj" kind="showDetail" identifier="MainController" id="pjd-0w-Egw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+        <!--Offline View Controller-->
+        <scene sceneID="Mv7-hV-qWv">
+            <objects>
+                <viewController storyboardIdentifier="NetworkUnavailable" id="KqR-3P-Tza" customClass="OfflineViewController" customModule="Internet_Connection_with_Reachability" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dd4-hC-s5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're offline, connect to the internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-Ol-vgX">
+                                <rect key="frame" x="65.5" y="387" width="283" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="wifi.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Hn-ph-HSS">
+                                <rect key="frame" x="147" y="271" width="120" height="106"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xvI-3r-Nxp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Hn-ph-HSS" firstAttribute="centerX" secondItem="Dd4-hC-s5P" secondAttribute="centerX" id="8vE-d2-gKX"/>
+                            <constraint firstItem="xvI-3r-Nxp" firstAttribute="bottom" secondItem="nEo-Ol-vgX" secondAttribute="bottom" constant="400" id="CRP-Kc-RcX"/>
+                            <constraint firstItem="8Hn-ph-HSS" firstAttribute="leading" secondItem="xvI-3r-Nxp" secondAttribute="leading" constant="147" id="RL5-z7-c6c"/>
+                            <constraint firstItem="nEo-Ol-vgX" firstAttribute="top" secondItem="8Hn-ph-HSS" secondAttribute="bottom" constant="8" id="Y3G-9t-TUL"/>
+                            <constraint firstItem="8Hn-ph-HSS" firstAttribute="top" secondItem="xvI-3r-Nxp" secondAttribute="top" constant="271" id="imk-Ft-0g6"/>
+                            <constraint firstItem="8Hn-ph-HSS" firstAttribute="centerX" secondItem="nEo-Ol-vgX" secondAttribute="centerX" id="tWb-BT-xNe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F8s-pl-q1V"/>
+                    <connections>
+                        <segue destination="4vk-Ie-egj" kind="showDetail" identifier="MainController" id="eke-Ax-bqc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cQ-sV-LNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-83"/>
+        </scene>
+        <!--Posts Table View Controller-->
+        <scene sceneID="68h-fa-jZI">
+            <objects>
+                <tableViewController id="OTc-z7-ByW" customClass="PostsTableViewController" customModule="Internet_Connection_with_Reachability" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ksQ-Iy-gUw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" textLabel="06g-0O-Wa8" detailTextLabel="VyL-Rs-Q3A" style="IBUITableViewCellStyleSubtitle" id="1wx-pJ-yGD">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1wx-pJ-yGD" id="zRk-Iv-4en">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="06g-0O-Wa8">
+                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VyL-Rs-Q3A">
+                                            <rect key="frame" x="20" y="22.5" width="30.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OTc-z7-ByW" id="Zel-Yn-Iva"/>
+                            <outlet property="delegate" destination="OTc-z7-ByW" id="4lw-oX-FWX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Vjw-Zi-fpG"/>
+                    <connections>
+                        <segue destination="KqR-3P-Tza" kind="show" identifier="NetworkUnavailable" id="P4V-C6-EBI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QT6-kH-RLx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OGr-xE-sxA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4vk-Ie-egj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G33-46-n2R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OTc-z7-ByW" kind="relationship" relationship="rootViewController" id="17d-aL-Kk5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5l-nj-SYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="621"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eke-Ax-bqc"/>
+        <segue reference="P4V-C6-EBI"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="wifi.slash" catalog="system" width="128" height="102"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
